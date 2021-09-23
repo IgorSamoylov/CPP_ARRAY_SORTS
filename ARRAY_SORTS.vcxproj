@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ARRAY_SORTS.cpp" />
+    <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp" />
     <ClCompile Include="SORT1.cpp" />
     <ClCompile Include="SORT2.cpp" />
     <ClCompile Include="Util.cpp" />

@@ -27,6 +27,9 @@
     <ClCompile Include="Util.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ARRAY_SORTS.h">

@@ -6,7 +6,7 @@ vector<int> quick_sort(vector<int> v) {
     int size = v.size();
     if (size < 2) return v;
 
-    int pivot_index = random_generator() % size;
+    int pivot_index = random_generator(v) % size;
     int pivot_value = v[pivot_index];
 
     vector<int> lower_values;
