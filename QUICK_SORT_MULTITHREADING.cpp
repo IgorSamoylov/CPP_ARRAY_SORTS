@@ -6,16 +6,20 @@ unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
     int size = v->size();
     if (size < 2) return v;
 
-    int pivot_index = random_generator(*v) % size; //cout << endl << "pivot index: " << pivot_index << endl;
+    int pivot_index = size >> 1; 
+        //print_multithread("pivot index: " + to_string(pivot_index) + " thread: ");
+        //cout << this_thread::get_id();
     int pivot_value = (*v)[pivot_index];
+    int pivot_values_counter = 0;
 
-    unique_ptr <vector<int>> lower_values (new vector<int>());
-    unique_ptr <vector<int>> higher_values(new vector<int>());
+    unique_ptr <vector<int>> lower_values(new vector<int>);
+    unique_ptr <vector<int>> higher_values(new vector<int>);
     
     for (int i = 0; i < size; ++i) {
-        if (i == pivot_index) continue;
-        if ((*v)[i] < pivot_value) (*lower_values).push_back((*v)[i]);
-        else (*higher_values).push_back((*v)[i]);
+        int val = (*v)[i];
+        if (val < pivot_value) lower_values->push_back(val);
+        else if (val == pivot_value) pivot_values_counter++;
+        else higher_values->push_back(val);
     }
 
     packaged_task <unique_ptr<vector<int>>(unique_ptr<vector<int>>)>
@@ -34,8 +38,8 @@ unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
     
     unique_ptr<vector<int>> result_vector(new vector<int>);
     move(sort_lower->begin(), sort_lower->end(), back_inserter(*result_vector));
-    (*result_vector).push_back(pivot_value);
+    for (int i = 0; i < pivot_values_counter; ++i) result_vector->push_back(pivot_value);
     move(sort_higher->begin(), sort_higher->end(), back_inserter(*result_vector));
-
+   
     return result_vector;
 }

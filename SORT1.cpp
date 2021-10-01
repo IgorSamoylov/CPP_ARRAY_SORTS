@@ -8,12 +8,14 @@ vector<int> quick_sort(vector<int> v) {
 
     int pivot_index = random_generator(v) % size;
     int pivot_value = v[pivot_index];
+    int pivot_values_counter = 0;
 
     vector<int> lower_values;
     vector<int> higher_values;
     for (int i = 0; i < size; ++i) {
-        if (i == pivot_index) continue;
+        //if (i == pivot_index) continue;
         if (v[i] < pivot_value) lower_values.push_back(v[i]);
+        else if (v[i] == pivot_value) pivot_values_counter++;
         else higher_values.push_back(v[i]);
     }
 
@@ -22,7 +24,7 @@ vector<int> quick_sort(vector<int> v) {
 
     vector<int> result_vector;
     move(sort_lower.begin(), sort_lower.end(), back_inserter(result_vector));
-    result_vector.push_back(pivot_value);
+    for (int i = 0; i < pivot_values_counter; ++i) result_vector.push_back(pivot_value);
     move(sort_higher.begin(), sort_higher.end(), back_inserter(result_vector));
 
     return result_vector;

@@ -16,5 +16,6 @@ vector<int>* quick_sort2(vector<int>* v);
 unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v);
 
 int random_generator(vector<int> seed);
+void print_multithread(string n);
 
 
