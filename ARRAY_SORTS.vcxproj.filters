@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ARRAY_SORTS.cpp">
+    <ClCompile Include="TEST_ARRAY_SORTS.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SORT2.cpp">
