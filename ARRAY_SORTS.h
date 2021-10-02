@@ -13,7 +13,8 @@ using namespace std;
 int random_generator(vector<int> seed);
 void print_multithread(string n);
 
-const int VECTOR_SIZE = 400;
+const size_t VECTOR_SIZE = 4000;
+const size_t THREAD_RECURSION_BORDER = 200;
 
 vector<int> quick_sort(const vector<int>& v);
 vector<int>* quick_sort2(vector<int>* v);
