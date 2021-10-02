@@ -18,11 +18,9 @@ vector<int> quick_sort(vector<int> v) {
         else higher_values.push_back(val);
     }
 
-    vector<int> sort_lower = quick_sort(lower_values);
+    vector<int> result_vector = quick_sort(lower_values);
     vector<int> sort_higher = quick_sort(higher_values);
 
-    vector<int> result_vector;
-    move(sort_lower.begin(), sort_lower.end(), back_inserter(result_vector));
     for (size_t i = 0; i < pivot_values_counter; ++i) result_vector.push_back(pivot_value);
     move(sort_higher.begin(), sort_higher.end(), back_inserter(result_vector));
 

@@ -35,5 +35,8 @@
     <ClInclude Include="ARRAY_SORTS.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
