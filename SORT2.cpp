@@ -14,7 +14,7 @@ vector<int>* quick_sort2(vector<int>* v) {
     int pivot_value = (*v)[pivot_index];
     size_t pivot_values_counter = 0;
 
-    vector<int>* lower_values = new vector<int>();
+    vector<int>* lower_values = new vector<int>(); lower_values->reserve(size); //!!
     vector<int>* higher_values = new vector<int>();
     
     for (int val : *v) {

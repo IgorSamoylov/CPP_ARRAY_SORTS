@@ -1,7 +1,7 @@
 #include "ARRAY_SORTS.h"
 
 // Quick sort algorithm for Stack allocation
-vector<int> quick_sort(vector<int> v) {
+vector<int> quick_sort(const vector<int>&  v) {
 
     size_t size = v.size();
     if (size < 2) return v;
@@ -10,7 +10,7 @@ vector<int> quick_sort(vector<int> v) {
     int pivot_value = v[pivot_index];
     size_t pivot_values_counter = 0;
 
-    vector<int> lower_values;
+    vector<int> lower_values; lower_values.reserve(size);
     vector<int> higher_values;
     for (int val : v) {
         if (val < pivot_value) lower_values.push_back(val);
