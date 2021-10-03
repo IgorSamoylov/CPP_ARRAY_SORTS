@@ -26,14 +26,14 @@ public:
 		vector<int> test_vector(*data);
 
 		auto start = chrono::system_clock::now();
-		vector<int> result = quick_sort(test_vector);
+		quick_sort(test_vector);
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
 		cout << endl << "Stack allocated QuickSort Time: " 
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(result.begin(), result.end(), [](int n) {cout << n << " "; });
+		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
 
 	}
 

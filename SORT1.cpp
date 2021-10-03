@@ -1,13 +1,17 @@
 #include "ARRAY_SORTS.h"
 
 // Quick sort algorithm for Stack allocation
-vector<int> quick_sort(const vector<int>&  v) {
+void quick_sort(vector<int>&  v) {
 
     size_t size = v.size();
-    if (size < 2) return v;
+    if (size < 2) return;
+    else if (size == 2) {
+        if (v[0] > v[1]) swap(v[0], v[1]);
+        return;
+    }
 
-    int pivot_index = 0;// random_generator(v) % size;
-    int pivot_value = v[pivot_index];
+    //int pivot_index = 0;//  random_generator(v) % size;
+    int pivot_value = v[0];
     size_t pivot_values_counter = 0;
 
     vector<int> lower_values; lower_values.reserve(size);
@@ -18,11 +22,11 @@ vector<int> quick_sort(const vector<int>&  v) {
         else higher_values.push_back(val);
     }
 
-    vector<int> result_vector = quick_sort(lower_values);
-    vector<int> sort_higher = quick_sort(higher_values);
+    quick_sort(lower_values);
+    quick_sort(higher_values);
 
-    for (size_t i = 0; i < pivot_values_counter; ++i) result_vector.push_back(pivot_value);
-    move(sort_higher.begin(), sort_higher.end(), back_inserter(result_vector));
+    for (size_t i = 0; i < pivot_values_counter; ++i) lower_values.push_back(pivot_value);
+    move(higher_values.begin(), higher_values.end(), back_inserter(lower_values));
 
-    return result_vector;
+    move(lower_values.begin(), lower_values.end(), v.begin());
 }
