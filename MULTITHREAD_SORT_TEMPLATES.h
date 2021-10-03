@@ -4,7 +4,7 @@
 
 
 // Multithreading Quick sort algoritm for templates types
-
+/*
 template <typename T>
 unique_ptr<vector<T>> quick_sort_multithreading_T(unique_ptr<vector<T>> v) {
 
@@ -52,3 +52,4 @@ unique_ptr<vector<T>> quick_sort_multithreading_T(unique_ptr<vector<T>> v) {
 }
 
 
+*/

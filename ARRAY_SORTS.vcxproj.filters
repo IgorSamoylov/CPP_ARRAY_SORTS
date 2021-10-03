@@ -38,5 +38,8 @@
     <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="CPP_INNER_IMPLEMENTATIONS.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

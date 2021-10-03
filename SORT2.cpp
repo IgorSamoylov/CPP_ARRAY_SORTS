@@ -1,20 +1,21 @@
 #include "ARRAY_SORTS.h"
 
-// Quick sort algorithm for Heap allocation
-vector<int>* quick_sort2(vector<int>* v) {
+// Quick sort algorithm for Heap allocation vector with inplace sorting
+void quick_sort2(vector<int>* v) {
 
     size_t size = v->size();
-    if (size < 2) return v; 
+    if (size < 2) return; 
     else if (size == 2) {
-        if ((*v)[0] > (*v)[1]) swap(v->front(), v->back());
-        return v;
+        if ((*v)[0] > (*v)[1]) swap((*v)[0], (*v)[1]);
+        return;
     }
 
-    int pivot_index = 0; // size >> 1;
-    int pivot_value = (*v)[pivot_index];
+    //int pivot_index = 0;
+    int pivot_value = (*v)[0];
     size_t pivot_values_counter = 0;
 
-    vector<int>* lower_values = new vector<int>(); lower_values->reserve(size); //!!
+    vector<int>* lower_values = new vector<int>(); 
+    lower_values->reserve(size); //!!
     vector<int>* higher_values = new vector<int>();
     
     for (int val : *v) {
@@ -23,15 +24,13 @@ vector<int>* quick_sort2(vector<int>* v) {
         else higher_values->push_back(val);
     }
     
-    vector<int>* result_vector = quick_sort2(lower_values); 
-    vector<int>* sort_higher = quick_sort2(higher_values); 
+    quick_sort2(lower_values); 
+    quick_sort2(higher_values); 
 
-    //fill_n(back_inserter(*result_vector), pivot_values_counter, pivot_value);
-    for (size_t i = 0; i < pivot_values_counter; ++i) result_vector->push_back(pivot_value);
-    move(sort_higher->begin(), sort_higher->end(), back_inserter(*result_vector));
+    fill_n(back_inserter(*lower_values), pivot_values_counter, pivot_value); // fill to the result middle, pivot-equal values
+    move(higher_values->begin(), higher_values->end(), back_inserter(*lower_values)); // appending higher values
 
-    //delete(lower_values);
     delete(higher_values);
-    
-    return result_vector;
+    move(lower_values->begin(), lower_values->end(), v->begin());
+    delete(lower_values);
 }

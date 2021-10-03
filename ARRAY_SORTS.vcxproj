@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ARRAY_SORTS.h" />
+    <ClInclude Include="CPP_INNER_IMPLEMENTATIONS.h" />
     <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
