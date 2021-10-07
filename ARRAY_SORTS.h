@@ -19,6 +19,7 @@ const size_t THREAD_RECURSION_BORDER = 200;
 void quick_sort(vector<int>& v);
 void quick_sort2(vector<int>* v);
 unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v);
+void quick_sort_prim(int* v, size_t size);
 
 
 

@@ -18,16 +18,19 @@
     <ClCompile Include="TEST_ARRAY_SORTS.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SORT2.cpp">
+    <ClCompile Include="QUICK_SORT_FOR_HEAP.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="SORT1.cpp">
+    <ClCompile Include="QUICK_SORT_FOR_STACK.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Util.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="QUICK_SORT_PRIMITIVE_ARRAYS.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +41,13 @@
     <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CPP_INNER_IMPLEMENTATIONS.h">
+    <ClInclude Include="MERGE_SORTS_CPP.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

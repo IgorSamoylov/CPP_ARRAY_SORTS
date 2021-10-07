@@ -1,6 +1,7 @@
 ﻿#include "ARRAY_SORTS.h"
 #include "MULTITHREAD_SORT_TEMPLATES.h"
-#include "CPP_INNER_IMPLEMENTATIONS.h"
+#include "MERGE_SORTS_CPP.h"
+#include "QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h"
 
 class Tester {
 public:
@@ -108,7 +109,7 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "CPP simple merge sort: "
+		cout << endl << "CPP simple MergeSort: "
 			<< diff.count() << " s Result:" << endl;
 
 		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
@@ -123,10 +124,42 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "CPP inner sort: "
+		cout << endl << "CPP inner sort for vectors: "
 			<< diff.count() << " s Result:" << endl;
 
 		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
+	}
+
+	void test_sort_8() {
+
+		size_t size = data->size();
+		int* test_array = data->data();
+		
+		auto start = chrono::system_clock::now();
+		quick_sort_prim(test_array, size);
+		auto end = chrono::system_clock::now();
+
+		chrono::duration<double> diff = end - start;
+		cout << endl << "Primitive int arrays QuickSort: "
+			<< diff.count() << " s Result:" << endl;
+
+		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
+	}
+
+	void test_sort_9() {
+
+		size_t size = data->size();
+		int* test_array = data->data();
+
+		auto start = chrono::system_clock::now();
+		quick_sort_prim_t(test_array, size);
+		auto end = chrono::system_clock::now();
+
+		chrono::duration<double> diff = end - start;
+		cout << endl << "Primitive T arrays QuickSort: "
+			<< diff.count() << " s Result:" << endl;
+
+		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
 	}
 
 
@@ -147,6 +180,8 @@ int main()
 	tester.test_sort_5();
 	tester.test_sort_6();
 	tester.test_sort_7();
+	tester.test_sort_8();
+	tester.test_sort_9();
 	
 
 }

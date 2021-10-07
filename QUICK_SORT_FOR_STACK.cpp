@@ -25,7 +25,7 @@ void quick_sort(vector<int>&  v) {
     quick_sort(lower_values);
     quick_sort(higher_values);
 
-    for (size_t i = 0; i < pivot_values_counter; ++i) lower_values.push_back(pivot_value);
+    fill_n(back_inserter(lower_values), pivot_values_counter, pivot_value);
     move(higher_values.begin(), higher_values.end(), back_inserter(lower_values));
 
     move(lower_values.begin(), lower_values.end(), v.begin());
