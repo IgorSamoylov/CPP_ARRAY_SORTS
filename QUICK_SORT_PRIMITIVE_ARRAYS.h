@@ -2,6 +2,9 @@
 
 #include "ARRAY_SORTS.h"
 
+// Cyclic implementation for QuickSort algorithm with M(1) memory usage
+
+/*
 template <class T>
 void quick_sort_prime(T* v, size_t size) {
 
@@ -20,3 +23,4 @@ void quick_sort_prime(T* v, size_t size) {
 	}
 }
 
+*/
