@@ -162,6 +162,22 @@ public:
 		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
 	}
 
+	void test_sort_10() {
+
+		size_t size = data->size();
+		int* test_array = data->data();
+
+		auto start = chrono::system_clock::now();
+		merge_sort_iterative_prim_t(test_array, size);
+		auto end = chrono::system_clock::now();
+
+		chrono::duration<double> diff = end - start;
+		cout << endl << "Primitive T arrays iterative MergeSort: "
+			<< diff.count() << " s Result:" << endl;
+
+		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
+	}
+
 
 	~Tester() {
 		delete(data);
@@ -182,8 +198,8 @@ int main()
 	tester.test_sort_7();
 	tester.test_sort_8();
 	tester.test_sort_9();
+	tester.test_sort_10();
 	
-
 }
 
 
