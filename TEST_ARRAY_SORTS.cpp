@@ -23,7 +23,7 @@ public:
 	}
 
 	void test_sort_1() {
-
+		
 		vector<int> test_vector(*data);
 
 		auto start = chrono::system_clock::now();
@@ -34,13 +34,13 @@ public:
 		cout << endl << "Stack allocated QuickSort Time: " 
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
-
+		print_vector(&test_vector);
 	}
 
 	void test_sort_2() {
-
-		vector<int>* test_vector = new vector<int>(*data);
+		
+		vector<int>* test_vector = new vector<int>();
+		copy(data->begin(), data->end(), back_inserter(*test_vector));
 
 		auto start = chrono::system_clock::now();
 		quick_sort2(test_vector);
@@ -50,12 +50,14 @@ public:
 		cout << endl << "Heap allocated QuickSort Time: " 
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(test_vector->begin(), test_vector->end(), [](int n) {cout << n << " "; });
+		print_vector(test_vector);
+		delete(test_vector);
 	}
 	
 	void test_sort_3() {
 		
-		unique_ptr<vector<int>> data_uniq_ptr = make_unique<vector<int>>(*data);
+		unique_ptr<vector<int>> data_uniq_ptr = make_unique<vector<int>>();
+		copy(data->begin(), data->end(), back_inserter(*data_uniq_ptr));
 
 		auto start = chrono::system_clock::now();
 		unique_ptr<vector<int>> result_u_p = quick_sort_multithreading(move(data_uniq_ptr));
@@ -86,7 +88,7 @@ public:
 	
 
 	void test_sort_5() {
-
+		
 		vector<int> test_vector(*data);// Copying data vector for inplace merging
 
 		auto start = chrono::system_clock::now();
@@ -94,14 +96,14 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "CPP inplace_merge sort: "
+		cout << endl << "CPP recursive inplace_merge sort: "
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
+		print_vector(&test_vector);
 	}
 
 	void test_sort_6() {
-
+		
 		vector<int> test_vector(*data);// Copying data vector for inplace merging
 
 		auto start = chrono::system_clock::now();
@@ -109,14 +111,13 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "CPP simple MergeSort: "
+		cout << endl << "CPP simple recursive MergeSort: "
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
+		print_vector(&test_vector);
 	}
 
 	void test_sort_7() {
-
 		vector<int> test_vector(*data);
 
 		auto start = chrono::system_clock::now();
@@ -127,45 +128,48 @@ public:
 		cout << endl << "CPP inner sort for vectors: "
 			<< diff.count() << " s Result:" << endl;
 
-		for_each(test_vector.begin(), test_vector.end(), [](int n) {cout << n << " "; });
+		print_vector(&test_vector);
 	}
 
 	void test_sort_8() {
-
+		
 		size_t size = data->size();
-		int* test_array = data->data();
+		int* test_array = new int[size];
+		for (size_t i = 0; i < size; i++) test_array[i] = (*data)[i];
 		
 		auto start = chrono::system_clock::now();
 		quick_sort_prim(test_array, size);
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive int arrays QuickSort: "
+		cout << endl << "Primitive int arrays resursive QuickSort: "
 			<< diff.count() << " s Result:" << endl;
 
-		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
+		print_array(test_array, size);
+		delete[](test_array);
 	}
 
 	void test_sort_9() {
-
 		size_t size = data->size();
-		int* test_array = data->data();
+		int* test_array = new int[size];
+		for (size_t i = 0; i < size; i++) test_array[i] = (*data)[i];
 
 		auto start = chrono::system_clock::now();
 		quick_sort_prim_t(test_array, size);
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive T arrays QuickSort: "
+		cout << endl << "Primitive T arrays resursive QuickSort: "
 			<< diff.count() << " s Result:" << endl;
 
-		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
+		print_array(test_array, size);
+		delete[](test_array);
 	}
 
 	void test_sort_10() {
-
 		size_t size = data->size();
-		int* test_array = data->data();
+		int* test_array = new int[size];
+		for (size_t i = 0; i < size; i++) test_array[i] = (*data)[i];
 
 		auto start = chrono::system_clock::now();
 		merge_sort_iterative_prim_t(test_array, size);
@@ -175,7 +179,19 @@ public:
 		cout << endl << "Primitive T arrays iterative MergeSort: "
 			<< diff.count() << " s Result:" << endl;
 
-		for (size_t i = 0; i < size; i++) cout << test_array[i] << " ";
+		print_array(test_array, size);
+		delete[](test_array);
+	}
+
+	void print_vector(vector<int>* data) {	
+		for_each(data->begin(), data->end(),
+			[](int n) { cout << n << " "; });
+		cout << endl;
+	}
+
+	void print_array(int* data, size_t size) {		
+		for (size_t i = 0; i < size; i++) cout << data[i] << " ";
+		cout << endl;
 	}
 
 
@@ -190,14 +206,22 @@ int main()
 	Tester tester;
 	tester.prepare_test_vector(VECTOR_SIZE);
 	tester.test_sort_1();
+	
 	tester.test_sort_2();
+	
 	tester.test_sort_3();
-	//tester.test_sort_4();
+	
+		//tester.test_sort_4();
 	tester.test_sort_5();
+	
 	tester.test_sort_6();
+	
 	tester.test_sort_7();
+	
 	tester.test_sort_8();
+	
 	tester.test_sort_9();
+	
 	tester.test_sort_10();
 	
 }
