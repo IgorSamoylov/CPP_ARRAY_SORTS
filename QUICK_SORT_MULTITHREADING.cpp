@@ -1,6 +1,9 @@
+/*
+* Multithreading Quick sort algoritm for vector of int's
+*/
+
 #include "ARRAY_SORTS.h"
 
-// Multithreading Quick sort algoritm for vector of int's
 unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
 
     size_t size = v->size();
@@ -31,7 +34,7 @@ unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
     unique_ptr<vector<int>> result = nullptr;
     unique_ptr<vector<int>> higher_part = nullptr;
 
-    // If vector size still big, we create and use threads, else - simple recursion calls 
+    // If vector size stil big, we create and use threads, else - simple recursion calls 
     if (size > THREAD_RECURSION_BORDER) {
        
         packaged_task <unique_ptr<vector<int>>(unique_ptr<vector<int>>)>

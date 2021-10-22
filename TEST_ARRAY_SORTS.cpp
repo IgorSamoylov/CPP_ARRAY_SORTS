@@ -1,7 +1,12 @@
-﻿#include "ARRAY_SORTS.h"
+﻿/*
+* Testing class for all sorts
+*/
+
+#include "ARRAY_SORTS.h"
 #include "MULTITHREAD_SORT_TEMPLATES.h"
 #include "MERGE_SORTS_CPP.h"
 #include "QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h"
+#include "MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h"
 
 class Tester {
 public:

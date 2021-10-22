@@ -150,8 +150,8 @@
   <ItemGroup>
     <ClInclude Include="ARRAY_SORTS.h" />
     <ClInclude Include="MERGE_SORTS_CPP.h" />
+    <ClInclude Include="MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h" />
     <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h" />
-    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS.h" />
     <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -44,10 +44,10 @@
     <ClInclude Include="MERGE_SORTS_CPP.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS.h">
+    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h">
+    <ClInclude Include="MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
