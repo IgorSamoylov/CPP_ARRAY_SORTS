@@ -9,7 +9,7 @@ template <typename T>
 void merge_sort_iterative_prim_t(T* v, size_t size) {
     T* buffer = new T[size];
     // step_increment means half of each processing group in each traversal
-    for (size_t step_increment = 1; step_increment <= size; step_increment *= 2) {
+    for (size_t step_increment = 1; step_increment < size; step_increment *= 2) {
 
         // Pass through the source array with x2 increment of processing group
         size_t buffer_iter = 0;
