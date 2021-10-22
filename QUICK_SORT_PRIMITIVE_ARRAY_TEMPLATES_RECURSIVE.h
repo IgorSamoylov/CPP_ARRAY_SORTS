@@ -1,12 +1,12 @@
 /*
-* QuickSort recursive algorithm for Heap allocation primitive T array
+* QuickSort recursive algorithm for Heap allocated primitive T array
 */
 
 #pragma once
 
-#include "ARRAY_SORTS.h"
+#include <memory>
 
-// Auxiliary sorts for extreme cases
+// Auxiliary sorts for an extreme cases
 template <class T>
 void insertion_sort(T* v, size_t size) {
 

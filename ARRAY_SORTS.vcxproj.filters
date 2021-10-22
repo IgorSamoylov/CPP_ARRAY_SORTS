@@ -30,7 +30,7 @@
     <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="QUICK_SORT_PRIMITIVE_ARRAYS.cpp">
+    <ClCompile Include="QUICK_SORT_PRIMITIVE_ARRAY.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,13 +38,10 @@
     <ClInclude Include="ARRAY_SORTS.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MULTITHREAD_SORT_TEMPLATES.h">
+    <ClInclude Include="MERGE_SORTS_SIMPLE_CPP.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="MERGE_SORTS_CPP.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h">
+    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAY_TEMPLATES_RECURSIVE.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h">

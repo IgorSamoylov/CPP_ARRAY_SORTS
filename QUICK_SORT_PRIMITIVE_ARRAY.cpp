@@ -1,8 +1,7 @@
 /*
 * Quick sort recursive algorithm for Heap allocation primitive int array
 */
-
-#include "ARRAY_SORTS.h"
+#include <memory>
 
 void quick_sort_prim(int* v, size_t size) {
 

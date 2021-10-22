@@ -1,7 +1,13 @@
-#include "ARRAY_SORTS.h"
+/*
+* QuickSort algorithm for Heap allocated int vector
+*/
 
-// Quick sort algorithm for Heap allocation vector with inplace sorting
-void quick_sort2(vector<int>* v) {
+#include <vector>
+#include <algorithm>
+#include <iterator>
+using namespace std;
+
+void quick_sort_heap(vector<int>* v) {
 
     size_t size = v->size();
     if (size < 2) return; 
@@ -10,12 +16,12 @@ void quick_sort2(vector<int>* v) {
         return;
     }
 
-    //int pivot_index = 0;
+    //int pivot_index = 0; // This may be random index
     int pivot_value = (*v)[0];
     size_t pivot_values_counter = 0;
 
     vector<int>* lower_values = new vector<int>(); 
-    lower_values->reserve(size); //!!
+    lower_values->reserve(size); // Reserve memory for this vector, will be a result vector
     vector<int>* higher_values = new vector<int>();
     
     for (int val : *v) {
@@ -24,10 +30,10 @@ void quick_sort2(vector<int>* v) {
         else higher_values->push_back(val);
     }
     
-    quick_sort2(lower_values); 
-    quick_sort2(higher_values); 
+    quick_sort_heap(lower_values); 
+    quick_sort_heap(higher_values); 
 
-    fill_n(back_inserter(*lower_values), pivot_values_counter, pivot_value); // fill to the result middle, pivot-equal values
+    fill_n(back_inserter(*lower_values), pivot_values_counter, pivot_value); // fill the result vector with middle, pivot-equal values
     move(higher_values->begin(), higher_values->end(), back_inserter(*lower_values)); // appending higher values
 
     delete(higher_values);

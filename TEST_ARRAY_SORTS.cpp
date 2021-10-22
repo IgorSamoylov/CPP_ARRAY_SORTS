@@ -1,11 +1,11 @@
 ﻿/*
-* Testing class for all sorts
+* Testing class for the all sorts
 */
 
 #include "ARRAY_SORTS.h"
 #include "MULTITHREAD_SORT_TEMPLATES.h"
-#include "MERGE_SORTS_CPP.h"
-#include "QUICK_SORT_PRIMITIVE_ARRAYS_TEMPLATES_RECURSIVE.h"
+#include "MERGE_SORTS_SIMPLE_CPP.h"
+#include "QUICK_SORT_PRIMITIVE_ARRAY_TEMPLATES_RECURSIVE.h"
 #include "MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h"
 
 class Tester {
@@ -19,7 +19,7 @@ public:
 		data = new vector<int>(vector_size);
 
 		knuth_b generator;
-		generator.seed(time(nullptr));
+		generator.seed(unsigned int(time(nullptr)));
 		generate(data->begin(), data->end(), [&generator] {return generator() % 100;});
 
 		cout << "Source:" << endl;
@@ -38,7 +38,6 @@ public:
 		chrono::duration<double> diff = end - start;
 		cout << endl << "Stack allocated QuickSort Time: " 
 			<< diff.count() << " s Result:" << endl;
-
 		print_vector(&test_vector);
 	}
 
@@ -48,13 +47,12 @@ public:
 		copy(data->begin(), data->end(), back_inserter(*test_vector));
 
 		auto start = chrono::system_clock::now();
-		quick_sort2(test_vector);
+		quick_sort_heap(test_vector);
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
 		cout << endl << "Heap allocated QuickSort Time: " 
 			<< diff.count() << " s Result:" << endl;
-
 		print_vector(test_vector);
 		delete(test_vector);
 	}
@@ -71,7 +69,6 @@ public:
 		chrono::duration<double> diff = end - start;
 		cout << endl << "Multithread QuickSort Time: "
 			<< diff.count() << " s Result:" << endl;
-
 		for_each(result_u_p->begin(), result_u_p->end(), [](int n) {cout << n << " "; });
 	}
 	/*
@@ -103,7 +100,6 @@ public:
 		chrono::duration<double> diff = end - start;
 		cout << endl << "CPP recursive inplace_merge sort: "
 			<< diff.count() << " s Result:" << endl;
-
 		print_vector(&test_vector);
 	}
 
@@ -118,7 +114,6 @@ public:
 		chrono::duration<double> diff = end - start;
 		cout << endl << "CPP simple recursive MergeSort: "
 			<< diff.count() << " s Result:" << endl;
-
 		print_vector(&test_vector);
 	}
 
@@ -132,7 +127,6 @@ public:
 		chrono::duration<double> diff = end - start;
 		cout << endl << "CPP inner sort for vectors: "
 			<< diff.count() << " s Result:" << endl;
-
 		print_vector(&test_vector);
 	}
 
@@ -147,7 +141,7 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive int arrays resursive QuickSort: "
+		cout << endl << "Primitive int array resursive QuickSort: "
 			<< diff.count() << " s Result:" << endl;
 
 		print_array(test_array, size);
@@ -164,7 +158,7 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive T arrays resursive QuickSort: "
+		cout << endl << "Primitive T array resursive QuickSort: "
 			<< diff.count() << " s Result:" << endl;
 
 		print_array(test_array, size);
@@ -181,7 +175,7 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive T arrays iterative MergeSort: "
+		cout << endl << "Primitive T array iterative MergeSort: "
 			<< diff.count() << " s Result:" << endl;
 
 		print_array(test_array, size);

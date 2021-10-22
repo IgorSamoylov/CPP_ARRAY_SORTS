@@ -1,4 +1,7 @@
-#include "ARRAY_SORTS.h"
+#include <vector>
+#include <algorithm>
+#include <iterator>
+using namespace std;
 
 // Quick sort algorithm for Stack allocation
 void quick_sort(vector<int>&  v) {

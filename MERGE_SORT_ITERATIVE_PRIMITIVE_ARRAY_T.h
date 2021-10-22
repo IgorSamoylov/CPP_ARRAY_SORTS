@@ -1,11 +1,9 @@
 /*
-* Most fast version of iterative MergeSort algorithm, which used
-* const M(1) of memory in fixed auxiliary buffer
+* Most fast version of the iterative MergeSort algorithm, which used
+* M(n) of memory in a fixed auxiliary buffer
 */
 
 #pragma once
-
-#include "ARRAY_SORTS.h"
 
 template <typename T>
 void merge_sort_iterative_prim_t(T* v, size_t size) {
@@ -37,15 +35,18 @@ void merge_sort_iterative_prim_t(T* v, size_t size) {
             while (middle_index < end_index
                 && middle_index < size)
                 buffer[buffer_iter++] = v[middle_index++];
-            /*cout << endl << "Iteration " << step_increment << endl;
-            cout << endl << "Buffer: " << endl;
-            for (size_t i = 0; i < size; i++) cout << buffer[i] << " ";
-            cout << endl << "v: " << endl;
-            for (size_t i = 0; i < size; i++) cout << v[i] << " ";*/
-
         }
         // Drop buffer entry to the source array in each traversal
         memcpy(v, buffer, size * sizeof(*v));
     }
     delete[] buffer;
 }
+
+
+
+
+/*cout << endl << "Iteration " << step_increment << endl;
+           cout << endl << "Buffer: " << endl;
+           for (size_t i = 0; i < size; i++) cout << buffer[i] << " ";
+           cout << endl << "v: " << endl;
+           for (size_t i = 0; i < size; i++) cout << v[i] << " ";*/

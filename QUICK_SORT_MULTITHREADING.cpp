@@ -2,7 +2,14 @@
 * Multithreading Quick sort algoritm for vector of int's
 */
 
-#include "ARRAY_SORTS.h"
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <thread>
+#include <future>
+using namespace std;
+
+const size_t THREAD_RECURSION_BORDER = 200;
 
 unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
 
@@ -14,7 +21,7 @@ unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
         return v;
     }
 
-    int pivot_index = 0;// size >> 1;
+    int pivot_index = 0;// size >> 1; // This may be a random index
         
     int pivot_value = (*v)[pivot_index];
     int pivot_values_counter = 0;
