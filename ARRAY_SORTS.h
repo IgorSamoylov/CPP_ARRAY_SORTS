@@ -10,7 +10,7 @@
 #include <future>
 using namespace std;
 
-int random_generator(vector<int> seed);
+size_t random_generator();
 void print_multithread(string n);
 
 const size_t VECTOR_SIZE = 2000;

@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
+#include "ARRAY_SORTS.h"
 using namespace std;
 
 void quick_sort_heap(vector<int>* v) {
@@ -16,12 +17,13 @@ void quick_sort_heap(vector<int>* v) {
         return;
     }
 
-    //int pivot_index = 0; // This may be random index
-    int pivot_value = (*v)[0];
+    size_t pivot_index = random_generator() % size;
+    int pivot_value = (*v)[pivot_index];
     size_t pivot_values_counter = 0;
 
     vector<int>* lower_values = new vector<int>(); 
-    lower_values->reserve(size); // Reserve memory for this vector, will be a result vector
+    // Reserve memory for this vector, that will be a result vector
+    lower_values->reserve(size); 
     vector<int>* higher_values = new vector<int>();
     
     for (int val : *v) {

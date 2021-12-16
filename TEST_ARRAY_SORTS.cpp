@@ -71,24 +71,7 @@ public:
 			<< diff.count() << " s Result:" << endl;
 		for_each(result_u_p->begin(), result_u_p->end(), [](int n) {cout << n << " "; });
 	}
-	/*
-	void test_sort_4(vector<int>& data) {
-		
-		unique_ptr<vector<int>> data_uniq_ptr = make_unique<vector<int>>(data);
-
-		auto start = chrono::system_clock::now();
-		unique_ptr<vector<int>> result_u_p = quick_sort_multithreading_T(move(data_uniq_ptr));
-		auto end = chrono::system_clock::now();
-
-		chrono::duration<double> diff = end - start;
-		cout << endl << "Multithread Template QuickSort Time: "
-			<< diff.count() << " s Result:" << endl;
-
-		for_each(result_u_p->begin(), result_u_p->end(), [](int n) {cout << n << " "; });
-	}
-	*/
 	
-
 	void test_sort_5() {
 		
 		vector<int> test_vector(*data);// Copying data vector for inplace merging
@@ -193,7 +176,6 @@ public:
 		cout << endl;
 	}
 
-
 	~Tester() {
 		delete(data);
 	}
@@ -201,16 +183,15 @@ public:
 
 int main()
 {
-	
 	Tester tester;
 	tester.prepare_test_vector(VECTOR_SIZE);
+
 	tester.test_sort_1();
 	
 	tester.test_sort_2();
 	
 	tester.test_sort_3();
 	
-		//tester.test_sort_4();
 	tester.test_sort_5();
 	
 	tester.test_sort_6();

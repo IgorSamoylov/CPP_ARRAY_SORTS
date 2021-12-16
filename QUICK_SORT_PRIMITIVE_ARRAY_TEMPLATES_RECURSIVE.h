@@ -41,26 +41,13 @@ void bubble_sort(T* v, size_t size) {
 
 template <class T>
 void quick_sort_prim_t(T* v, size_t size) {
-	/*
-	if (size < 2) return;
-	else if (size == 2) {
-		if (v[0] > v[1]) {
-			int tmp = v[0];
-			v[0] = v[1];
-			v[1] = tmp;
-		}
-		return;
-	}*/
+	
 	if (size < 40) {
 		insertion_sort(v, size);
 		return;
 	}
-	/*else if (size < 55) {
-		bubble_sort(v, size);
-		return;
-	}*/
-
-	T pivot_value = *v;
+	
+	T pivot_value = v[random_generator() % size];
 	size_t pivot_values_counter = 0;
 
 	T* lower_values = new T[size]; size_t lower_size = 0;

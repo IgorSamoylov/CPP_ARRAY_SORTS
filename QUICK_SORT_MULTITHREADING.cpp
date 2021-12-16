@@ -1,5 +1,5 @@
 /*
-* Multithreading Quick sort algoritm for vector of int's
+* Multithreading Quick sort algoritm for vector of int's placed in Heap memory
 */
 
 #include <vector>
@@ -7,6 +7,7 @@
 #include <iterator>
 #include <thread>
 #include <future>
+#include "ARRAY_SORTS.h"
 using namespace std;
 
 const size_t THREAD_RECURSION_BORDER = 200;
@@ -21,10 +22,10 @@ unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v) {
         return v;
     }
 
-    int pivot_index = 0;// size >> 1; // This may be a random index
+    size_t pivot_index = random_generator() % size;
         
     int pivot_value = (*v)[pivot_index];
-    int pivot_values_counter = 0;
+    size_t pivot_values_counter = 0;
 
     unique_ptr <vector<int>> lower_values = make_unique<vector<int>>();
     lower_values->reserve(size); // Reserves memory for merge this vector as the result vector in future

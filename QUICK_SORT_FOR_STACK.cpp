@@ -1,9 +1,10 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
+#include "ARRAY_SORTS.h"
 using namespace std;
 
-// Quick sort algorithm for Stack allocation
+// Quick sort algorithm for vector of ints and Stack allocation
 void quick_sort(vector<int>&  v) {
 
     size_t size = v.size();
@@ -13,8 +14,8 @@ void quick_sort(vector<int>&  v) {
         return;
     }
 
-    //int pivot_index = 0;//  random_generator(v) % size;
-    int pivot_value = v[0];
+    size_t pivot_index = random_generator() % size;
+    int pivot_value = v[pivot_index];
     size_t pivot_values_counter = 0;
 
     vector<int> lower_values; lower_values.reserve(size);

@@ -19,7 +19,7 @@ void merge_sort_iterative_prim_t(T* v, size_t size) {
             size_t middle_index = i + step_increment;
             size_t end_index = middle_index + step_increment;
 
-            //Perform Merging in each processing group
+            //Perform Merging in processing group
             while (begin_index < i + step_increment
                 && middle_index < end_index
                 && middle_index < size) {
@@ -28,7 +28,7 @@ void merge_sort_iterative_prim_t(T* v, size_t size) {
                     buffer[buffer_iter++] = v[begin_index++];
                 else buffer[buffer_iter++] = v[middle_index++];
             }
-            // Appending tails in each processing
+            // Appending tails in each processing group
             while (begin_index < i + step_increment
                 && begin_index < size)
                 buffer[buffer_iter++] = v[begin_index++];
@@ -41,12 +41,3 @@ void merge_sort_iterative_prim_t(T* v, size_t size) {
     }
     delete[] buffer;
 }
-
-
-
-
-/*cout << endl << "Iteration " << step_increment << endl;
-           cout << endl << "Buffer: " << endl;
-           for (size_t i = 0; i < size; i++) cout << buffer[i] << " ";
-           cout << endl << "v: " << endl;
-           for (size_t i = 0; i < size; i++) cout << v[i] << " ";*/

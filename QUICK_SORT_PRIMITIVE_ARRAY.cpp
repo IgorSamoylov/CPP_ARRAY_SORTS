@@ -2,6 +2,7 @@
 * Quick sort recursive algorithm for Heap allocation primitive int array
 */
 #include <memory>
+#include "ARRAY_SORTS.h"
 
 void quick_sort_prim(int* v, size_t size) {
 
@@ -15,7 +16,7 @@ void quick_sort_prim(int* v, size_t size) {
         return;
     }
 
-    int pivot_value = *v;
+    int pivot_value = v[random_generator() % size];
     size_t pivot_values_counter = 0;
 
     int* lower_values = new int[size]; size_t lower_size = 0;
