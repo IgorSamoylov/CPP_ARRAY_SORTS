@@ -7,7 +7,7 @@
 #include "QUICK_SORT_FOR_HEAP.h"
 #include "MULTITHREAD_SORT_TEMPLATES.h"
 #include "MERGE_SORTS_SIMPLE_CPP.h"
-#include "QUICK_SORT_PRIMITIVE_ARRAY_TEMPLATES_RECURSIVE.h"
+#include "QUICK_SORT_PRIMITIVE_ARRAY_RECURSIVE.h"
 #include "MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h"
 
 class Tester {
@@ -83,7 +83,7 @@ public:
 		auto end = chrono::system_clock::now();
 
 		chrono::duration<double> diff = end - start;
-		cout << endl << "CPP recursive inplace_merge sort: "
+		cout << endl << "\nCPP recursive inplace_merge sort: "
 			<< diff.count() << " s Result:" << endl;
 		print_vector(&test_vector);
 	}
@@ -115,23 +115,6 @@ public:
 		print_vector(&test_vector);
 	}
 
-	void test_sort_8() {
-		
-		size_t size = data->size();
-		int* test_array = new int[size];
-		for (size_t i = 0; i < size; i++) test_array[i] = (*data)[i];
-		
-		auto start = chrono::system_clock::now();
-		quick_sort_prim(test_array, size);
-		auto end = chrono::system_clock::now();
-
-		chrono::duration<double> diff = end - start;
-		cout << endl << "Primitive int array resursive QuickSort: "
-			<< diff.count() << " s Result:" << endl;
-
-		print_array(test_array, size);
-		delete[](test_array);
-	}
 
 	void test_sort_9() {
 		size_t size = data->size();
@@ -199,8 +182,6 @@ int main()
 	tester.test_sort_6();
 	
 	tester.test_sort_7();
-	
-	tester.test_sort_8();
 	
 	tester.test_sort_9();
 	

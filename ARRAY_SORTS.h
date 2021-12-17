@@ -17,7 +17,6 @@ const size_t VECTOR_SIZE = 2000;
 
 unique_ptr<vector<int>> quick_sort_multithreading(unique_ptr<vector<int>> v);
 
-void quick_sort_prim(int* v, size_t size);
 
 
 
