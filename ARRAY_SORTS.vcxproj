@@ -140,17 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TEST_ARRAY_SORTS.cpp" />
-    <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp" />
-    <ClCompile Include="QUICK_SORT_FOR_STACK.h" />
-    <ClCompile Include="QUICK_SORT_FOR_HEAP.h" />
+    <ClCompile Include="TestArraysSorts.cpp" />
+    <ClCompile Include="QuickSortMultithreadVectorInt.cpp" />
+    <ClCompile Include="QuickSortVectorStack.h" />
+    <ClCompile Include="QuickSortVectorHeap.h" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ARRAY_SORTS.h" />
-    <ClInclude Include="MERGE_SORTS_SIMPLE_CPP.h" />
-    <ClInclude Include="MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h" />
-    <ClInclude Include="QUICK_SORT_PRIMITIVE_ARRAY_RECURSIVE.h" />
+    <ClInclude Include="ArraySorts.h" />
+    <ClInclude Include="MergeSortsSimple.h" />
+    <ClInclude Include="MergeSortIteratvePrimitiveArray.h" />
+    <ClInclude Include="QuickSortRecursivePrimitiveArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

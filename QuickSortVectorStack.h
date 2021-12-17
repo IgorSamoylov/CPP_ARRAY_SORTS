@@ -1,7 +1,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include "ARRAY_SORTS.h"
+#include "ArraySorts.h"
 using namespace std;
 
 // Quick sort algorithm for vector of ints and Stack allocation

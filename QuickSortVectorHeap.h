@@ -5,7 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <iterator>
-#include "ARRAY_SORTS.h"
+#include "ArraySorts.h"
 using namespace std;
 
 template <class T>

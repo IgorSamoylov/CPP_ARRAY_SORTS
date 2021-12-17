@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ARRAY_SORTS.h"
+#include "ArraySorts.h"
 
 
 // Multithreading Quick sort algoritm for templates types

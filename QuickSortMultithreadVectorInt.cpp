@@ -7,7 +7,7 @@
 #include <iterator>
 #include <thread>
 #include <future>
-#include "ARRAY_SORTS.h"
+#include "ArraySorts.h"
 using namespace std;
 
 const size_t THREAD_RECURSION_BORDER = 200;

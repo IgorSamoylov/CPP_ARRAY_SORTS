@@ -2,13 +2,12 @@
 * Testing class for the all sorts
 */
 
-#include "ARRAY_SORTS.h"
-#include "QUICK_SORT_FOR_STACK.h"
-#include "QUICK_SORT_FOR_HEAP.h"
-#include "MULTITHREAD_SORT_TEMPLATES.h"
-#include "MERGE_SORTS_SIMPLE_CPP.h"
-#include "QUICK_SORT_PRIMITIVE_ARRAY_RECURSIVE.h"
-#include "MERGE_SORT_ITERATIVE_PRIMITIVE_ARRAY_T.h"
+#include "ArraySorts.h"
+#include "QuickSortVectorStack.h"
+#include "QuickSortVectorHeap.h"
+#include "MergeSortsSimple.h"
+#include "QuickSortRecursivePrimitiveArray.h"
+#include "MergeSortIteratvePrimitiveArray.h"
 
 class Tester {
 public:

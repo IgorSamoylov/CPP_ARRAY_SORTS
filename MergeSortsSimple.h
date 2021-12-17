@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "ARRAY_SORTS.h"
+#include "ArraySorts.h"
 
 template<class Iter>
 void merge_sort_inplace(Iter first, Iter last)
