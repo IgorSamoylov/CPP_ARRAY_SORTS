@@ -143,8 +143,8 @@
     <ClCompile Include="QUICK_SORT_PRIMITIVE_ARRAY.cpp" />
     <ClCompile Include="TEST_ARRAY_SORTS.cpp" />
     <ClCompile Include="QUICK_SORT_MULTITHREADING.cpp" />
-    <ClCompile Include="QUICK_SORT_FOR_STACK.cpp" />
-    <ClCompile Include="QUICK_SORT_FOR_HEAP.cpp" />
+    <ClCompile Include="QUICK_SORT_FOR_STACK.h" />
+    <ClCompile Include="QUICK_SORT_FOR_HEAP.h" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>

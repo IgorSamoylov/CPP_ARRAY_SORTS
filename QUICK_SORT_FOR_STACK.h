@@ -5,7 +5,8 @@
 using namespace std;
 
 // Quick sort algorithm for vector of ints and Stack allocation
-void quick_sort(vector<int>&  v) {
+template <class T>
+void quick_sort(vector<T>&  v) {
 
     size_t size = v.size();
     if (size < 2) return;
@@ -15,12 +16,12 @@ void quick_sort(vector<int>&  v) {
     }
 
     size_t pivot_index = random_generator() % size;
-    int pivot_value = v[pivot_index];
+    T pivot_value = v[pivot_index];
     size_t pivot_values_counter = 0;
 
-    vector<int> lower_values; lower_values.reserve(size);
-    vector<int> higher_values;
-    for (int val : v) {
+    vector<T> lower_values; lower_values.reserve(size);
+    vector<T> higher_values;
+    for (T val : v) {
         if (val < pivot_value) lower_values.push_back(val);
         else if (val == pivot_value) pivot_values_counter++;
         else higher_values.push_back(val);

@@ -18,10 +18,10 @@
     <ClCompile Include="TEST_ARRAY_SORTS.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="QUICK_SORT_FOR_HEAP.cpp">
+    <ClCompile Include="QUICK_SORT_FOR_HEAP.h">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="QUICK_SORT_FOR_STACK.cpp">
+    <ClCompile Include="QUICK_SORT_FOR_STACK.h">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Util.cpp">
